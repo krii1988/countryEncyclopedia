@@ -1,0 +1,18 @@
+<h2 class="text-4xl font-bold mt-6 mb-6">
+  {{ favouriteCountries.length }} favourite countries
+</h2>
+
+<div
+  class="grid grid-cols-1 md:grid-cols-4 gap-4"
+  *ngIf="favouriteCountries.length > 0"
+>
+  <app-country-card
+    *ngFor="let country of favouriteCountries"
+    [country]="country"
+    [isFavourite]="isFavourite"
+    [toggleFavourite]="toggleFavourite"
+    class="transition-transform transform-gpu focus:scale-105"
+  ></app-country-card>
+</div>
+
+<router-outlet />

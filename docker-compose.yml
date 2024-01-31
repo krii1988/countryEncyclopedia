@@ -1,0 +1,42 @@
+version: "3.8"
+services:
+  backend:
+    image: php:8.3-fpm
+    container_name: backend-laravel
+    volumes:
+      - ./backend:/var/www/html
+    ports:
+      - 8000:8000
+    networks:
+      - laravel
+    depends_on:
+      - db
+
+  frontend:
+    build: .
+    container_name: frontend-angluar
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./:/frontend
+
+  db:
+    image: postgres:latest
+    container_name: postgres-db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: laravel
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - laravel
+
+volumes:
+  db_data:
+
+networks:
+  laravel:

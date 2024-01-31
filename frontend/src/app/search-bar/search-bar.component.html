@@ -1,0 +1,28 @@
+<!-- Search bar -->
+<div class="mb-4">
+  <input
+    type="text"
+    class="w-full bg-white text-gray-800 rounded-md px-4 py-2 focus:ring-0 focus:shadow-xl"
+    placeholder="Type to search..."
+    (input)="onSearch($event)"
+  />
+  <button
+    class="absolute inset-y-0 right-0 flex items-center px-3 bg-gray-500 text-white rounded-r-md"
+  >
+    <!-- Search icon -->
+    <svg
+      class="w-6 h-6 text-white dark:text-white"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="2"
+        d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+      />
+    </svg>
+  </button>
+</div>

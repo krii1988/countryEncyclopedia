@@ -1,0 +1,25 @@
+type Country {
+    id: ID!
+    common_name: String!
+    official_name: String
+    country_code: String
+    translations: String!
+    population: Int
+    population_rank: Int
+    flag: String
+    area: Float
+    borders: String!
+    languages: String!
+}
+
+type Query {
+    # Query to fetch all countries
+    countries: [Country!]! @all
+
+    # Query to fetch a country by its country code
+    countryByCode(country_code: String!): Country
+
+    # Query to fetch countries by their language
+    countriesByLanguage(language: String!): [Country!]!
+    
+}

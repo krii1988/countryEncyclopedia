@@ -1,0 +1,15 @@
+<h2 class="text-4xl font-bold mt-6 mb-6">
+  {{ currentLanguage }} is spoken in these countries
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+  <app-country-card
+    *ngFor="let country of countryData.countries"
+    [country]="country"
+    [isFavourite]="isFavourite"
+    [toggleFavourite]="toggleFavourite"
+    class="transition-transform transform-gpu focus:scale-105"
+  ></app-country-card>
+</div>
+
+<router-outlet />

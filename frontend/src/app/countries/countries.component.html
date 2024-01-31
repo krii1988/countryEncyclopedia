@@ -1,0 +1,21 @@
+<h2 class="text-4xl font-bold mt-6 mb-6">
+  Learn more about {{ filteredCountries.length }} countries
+</h2>
+<app-search-bar
+  class="relative w-5/6"
+  (searchChange)="onSearchChange($event)"
+></app-search-bar>
+<div
+  class="grid grid-cols-1 md:grid-cols-4 gap-4"
+  *ngIf="filteredCountries.length > 0"
+>
+  <app-country-card
+    *ngFor="let country of filteredCountries"
+    [country]="country"
+    [isFavourite]="isFavourite"
+    [toggleFavourite]="toggleFavourite"
+    class="transition-transform transform-gpu focus:scale-105"
+  ></app-country-card>
+</div>
+
+<router-outlet />
