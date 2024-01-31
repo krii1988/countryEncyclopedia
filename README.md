@@ -14,9 +14,11 @@ Built with Laravel and Angular.
 
 You can setup the project automatically via a script or manually.
 
-### Automated Installation:
+### Semi-automatic Installation:
 
-Run `chmod +x run-backend.sh && run-backend.sh` to start installation.
+1. Go to `backend` folder and make a copy of the `.env.example` file and rename it to `.env`.
+
+2. Run `chmod +x run-backend.sh` and then `run-backend.sh` to start installation.
 
 ### Manual Installation:
 
