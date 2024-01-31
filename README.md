@@ -6,8 +6,8 @@ Built with Laravel and Angular.
 
 ## Technologies Used
 
-- Laravel
-- Angular
+- Laravel 10
+- Angular 17
 - GraphQL
 - Tailwind CSS & Flowbite
 - Docker
