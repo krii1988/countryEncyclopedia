@@ -4,9 +4,17 @@
 
 Built with Laravel and Angular.
 
+## Technologies Used
+
+- Laravel
+- Angular
+- GraphQL
+- Tailwind CSS & Flowbite
+- Docker
+
 ## Requirements
 
-- Docker
+- Docker & Docker Compose
 - PHP >= 8.1
 - Composer
 
@@ -22,39 +30,37 @@ You can setup the project automatically via a script or manually.
 
 ### Manual Installation:
 
-1. Run Docker-compose:
+1. Go to `backend` folder and make a copy of the `.env.example` file and rename it to `.env`.
 
+2. Run Docker-compose: 
     `docker-compose up -d`
-    
-2. Change directory to the backend folder:
+3. Change directory to the backend folder: 
     `cd backend\`
-    
-3. Install dependencies:
+4. Install dependencies: 
     `composer install`
-
-4. Generate the application key:
+5. Generate the application key:
     `php artisan key:generate`
 
-5. Run database migrations:
+6. Run database migrations:
     `php artisan migrate`
 
-6. Populate the database:
+7. Populate the database:
     `php artisan db:populate`
 
-7. Start the Laravel server:
+8. Start the Laravel server:
     `php artisan serve`
 
 
 ## Usage
 
 1. Go to http://localhost:4200 to see the application running.
-2. To stop the containers, run:
-    `docker-compose down`
+2. GraphiQL is available at http://localhost:8000/graphiql
+3. To stop the containers, run: `docker-compose down`
 
 
 ## Additional Backend Commands
 
-1. Populate the database with data from https://restcountries.com/v3.1/all API (is unavailable, a local JSON file is used instead).
+1. Populate the database with data from https://restcountries.com/v3.1/all API (if unavailable, a local JSON file (`backend/app/Data/countries.json`) is used instead).
     `php artisan db:populate`
 
 2. Clear the database:
